@@ -13,13 +13,19 @@ function RecipeCreate({ submitRecipe }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    submitRecipe({
-      name: name,
-      cuisine: cuisine,
-      photo: photo,
-      ingredients: ingredients,
-      preparation: preparation,
-    });
+
+    if (!name) {
+      alert("Please add a name")
+    } else {
+      submitRecipe({
+        name: name,
+        cuisine: cuisine,
+        photo: photo,
+        ingredients: ingredients,
+        preparation: preparation,
+      });
+    }
+
 
     // clear text areas
     setName("");
